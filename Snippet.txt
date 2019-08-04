@@ -1,0 +1,53 @@
+
+React - 
+Use tab to work
+rec→    Class component, export at the end.
+rafc→   Function component
+
+imr→	import React from 'react'
+imrc→	import React, { Component } from 'react'
+
+imp→	import moduleName from 'module'
+exp→	export default moduleName
+
+ren→	render() { return( ) }
+clg→	console.log(object)
+
+impt→   import PropTypes from 'prop-types'
+
+***************************************************
+
+VsCode
+* Alt + arrow up = move line
+Ctrl + d = duplicate line
+Ctrl + } = auto comment
+Ctrl + b = toggle explorer
+
+* shift + END = select complete line
+ctrl + left, right arrow = move between words
+ctrl + shift + left,right arrow = select words
+
+* BMayus + Tab = Tabulacion hacia la izq.
+fn + left, right arrow = start or end of line
+fn + shift + left, right arrow = select all line
+
+select multiple lines dowm
+ctrl + l
+
+rename same words
+select word + ctrl + f2
+
+go to definition
+select word + f12
+
+open terminal with file path
+ctrl + shift +c
+
+select across many files
+ctrl +f seacth current file
+ctrl + shift + f search entire project
+
+Run JSCODE
+node filename.js
+
+
