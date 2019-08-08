@@ -36,12 +36,24 @@ const initialState ={
         
       };
 
+      let githubClientId;
+      let githubClientSecret;
+
+      //check the environment (is in producction or not)
+      if(process.env.NODE_ENV !== 'production'){
+        githubClientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
+        githubClientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
+      } else {
+        githubClientId = process.env.GITHUB_CLIENT_ID;
+        githubClientSecret = process.env.GITHUB_CLIENT_SECRET;
+  
+      }
     //Get User
     const getUser = async username =>{
         setLoading()
         
         const res = await axios
-        .get(`https://api.github.com/users/${username}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
+        .get(`https://api.github.com/users/${username}?client_id=${githubClientId}&client_secret=${githubClientSecret}`);
         
         dispatch({
             //CHECAR GET_USERS SIN S
@@ -56,7 +68,7 @@ const initialState ={
         setLoading();
         
         const res = await axios
-        .get(`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
+        .get(`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${githubClientId}&client_secret=${githubClientSecret}`);
        
         dispatch({
             type: GET_REPOS,
